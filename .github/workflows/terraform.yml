@@ -34,15 +34,15 @@ jobs:
           TF_POSTGRES_USER: ${{secrets.POSTGRES_USER}}
           TF_SECRET_KEY: ${{secrets.SECRET_KEY}}
 
-      - name: Wait for approval
-        uses: trstringer/manual-approval@v1.9.1
-        with:
-          approvers: {{secrets.GHCR_USER_NAME}}
-          minimum-approvals: 1
-          secret: ${{secrets.GITHUB_TOKEN}}
+#      - name: Wait for approval
+#        uses: trstringer/manual-approval@v1.9.1
+#        with:
+#          approvers: {{secrets.GHCR_USER_NAME}}
+#          minimum-approvals: 1
+#          secret: ${{secrets.GITHUB_TOKEN}}
 
       - name : apply Terraform
-        run : terraform apply
+        run : terraform apply -auto-approve
         env:
           TF_RENDER_API_KEY: ${{secrets.RENDER_API_KEY}}
           TF_RENDER_OWNER_ID: ${{secrets.RENDER_OWNER_ID}}
