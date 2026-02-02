@@ -1,0 +1,33 @@
+{% load static %}
+<html>
+
+<head>
+<link rel="stylesheet" href="{% static 'css/crm.css' %}">
+</head>
+<body>
+<h2>Welcome to Daily Notes!!!</h2>
+<hr/>
+<h3>
+    Add your Daily note here:
+</h3>
+<hr/>
+<form id="myForm" method="POST">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Add Note">
+</form>
+<h4>Added Notes so far</h4>
+{% if notes %}
+<ul>
+    {% for note in notes %}
+    <li>
+        <strong>{{ note.title }}</strong>
+    </li>
+    {% endfor %}
+</ul>
+{% else %}
+    <p>No notes added yet!</p>
+{% endif %}
+</body>
+<script src="{% static 'js/crm.js' %}"></script>
+</html>
