@@ -63,10 +63,10 @@ jobs:
             username: ${{ secrets.GHCR_USER_NAME }}
             password: ${{ secrets.GHCR_AUTH_TOKEN }}
       - name: build docker image
-        run: docker build -t ghcr.io/aswinikumaran/first_docker_image .
+        run: docker build -t ghcr.io/aswinikumaran/first_docker_image:latest .
 
       - name: push docker image
-        run: docker push ghcr.io/aswinikumaran/first_docker_image
+        run: docker push ghcr.io/aswinikumaran/first_docker_image:latest
 
       - name: Deploy application
         run: curl -X POST "${{secrets.DEPLOY_HOOK_KEY}}"
