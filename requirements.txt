@@ -136,3 +136,5 @@ websocket-client==1.2.3
 wrapt==1.13.3
 xdg==5
 zipp==1.0.0
+black==21.12b0
+ruff==0.15.0
