@@ -69,7 +69,7 @@ jobs:
         run: docker push ghcr.io/aswinikumaran/first_docker_image
 
       - name: Deploy application
-        run: curl -x POST "${{secrets.DEPLOY_HOOK_KEY}}"
+        run: curl -X POST "${{secrets.DEPLOY_HOOK_KEY}}"
 
 
 
