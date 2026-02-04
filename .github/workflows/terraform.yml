@@ -19,7 +19,7 @@ jobs:
       - name: Set up aws credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: arn:aws:iam::506768526374:user/Aswini
+          role-to-assume: arn:aws:iam::aws:policy/AmazonS3FullAccess
           aws-region: eu-north-1
 
       - name: Initialize Terraform
