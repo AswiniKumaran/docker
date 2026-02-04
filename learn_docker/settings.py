@@ -91,7 +91,7 @@ if db_name:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
-            'NAME': env("DATABASE_NAME"),
+            'NAME': db_name,
             'USER': env("DATABASE_USER", default=""),
             'PASSWORD': env("DATABASE_PASSWORD", default=""),
             'HOST': env("DATABASE_HOST", default=""),
