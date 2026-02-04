@@ -39,6 +39,8 @@ jobs:
         run: |
           source venv/bin/activate
           python manage.py test crm
+        env:
+          TF_VAR_SECRET_KEY: ${{secrets.secret_key}}
 
   deploy:
     runs-on: ubuntu-latest
