@@ -26,15 +26,15 @@ jobs:
       - name: Initialize Terraform
         run: terraform init
       - name: Plan Terraform
-        run: terraform plan -input=false
+        run: terraform plan
         env:
-          TF_RENDER_API_KEY: ${{secrets.RENDER_API_KEY}}
-          TF_RENDER_OWNER_ID: ${{secrets.RENDER_OWNER_ID}}
-          TF_GHCR_USER_NAME: ${{secrets.GHCR_USER_NAME}}
-          TF_GHCR_AUTH_TOKEN: ${{secrets.GHCR_AUTH_TOKEN}}
-          TF_POSTGRES_DB: ${{secrets.POSTGRES_DB}}
-          TF_POSTGRES_USER: ${{secrets.POSTGRES_USER}}
-          TF_SECRET_KEY: ${{secrets.SECRET_KEY}}
+          TF_VAR_RENDER_API_KEY: ${{secrets.RENDER_API_KEY}}
+          TF_VAR_RENDER_OWNER_ID: ${{secrets.RENDER_OWNER_ID}}
+          TF_VAR_GHCR_USER_NAME: ${{secrets.GHCR_USER_NAME}}
+          TF_VAR_GHCR_AUTH_TOKEN: ${{secrets.GHCR_AUTH_TOKEN}}
+          TF_VAR_POSTGRES_DB: ${{secrets.POSTGRES_DB}}
+          TF_VAR_POSTGRES_USER: ${{secrets.POSTGRES_USER}}
+          TF_VAR_SECRET_KEY: ${{secrets.SECRET_KEY}}
 
 #      - name: Wait for approval
 #        uses: trstringer/manual-approval@v1.9.1
@@ -46,12 +46,12 @@ jobs:
       - name : apply Terraform
         run : terraform apply -auto-approve
         env:
-          TF_RENDER_API_KEY: ${{secrets.RENDER_API_KEY}}
-          TF_RENDER_OWNER_ID: ${{secrets.RENDER_OWNER_ID}}
-          TF_GHCR_USER_NAME: ${{secrets.GHCR_USER_NAME}}
-          TF_GHCR_AUTH_TOKEN: ${{secrets.GHCR_AUTH_TOKEN}}
-          TF_POSTGRES_DB: ${{secrets.POSTGRES_DB}}
-          TF_POSTGRES_USER: ${{secrets.POSTGRES_USER}}
-          TF_SECRET_KEY: ${{secrets.SECRET_KEY}}
+          TF_VAR_RENDER_API_KEY: ${{secrets.RENDER_API_KEY}}
+          TF_VAR_RENDER_OWNER_ID: ${{secrets.RENDER_OWNER_ID}}
+          TF_VAR_GHCR_USER_NAME: ${{secrets.GHCR_USER_NAME}}
+          TF_VAR_GHCR_AUTH_TOKEN: ${{secrets.GHCR_AUTH_TOKEN}}
+          TF_VAR_POSTGRES_DB: ${{secrets.POSTGRES_DB}}
+          TF_VAR_POSTGRES_USER: ${{secrets.POSTGRES_USER}}
+          TF_VAR_SECRET_KEY: ${{secrets.SECRET_KEY}}
 
 
