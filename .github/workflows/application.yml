@@ -28,9 +28,13 @@ jobs:
           source venv/bin/activate
           python -m django --version
       - name: run formatting
-        run: black .
+        run: |
+          source venv/bin/activate
+          black .
       - name: run linting
-        run: ruff check
+        run: |
+          source venv/bin/activate
+          ruff check
       - name: run tests
         run: |
           source venv/bin/activate
